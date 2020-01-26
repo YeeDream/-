@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>表单</title>
+	</head>
+	<body>
+		<form action="a.html" method="post|get" 
+			  enctype="multipart/form-data|application/x-www-form-urlencoded">
+	        文本框:
+	    <input type="text" name="java" id="js" value="" 
+	        	placeholder="请输入姓名" required="required" pattern="[0-9a-z]{6,9}" maxlength="15"/>
+	    <br />
+	        密码框:<input type="password" name="pass" value="" 
+	    	       placeholder="请输入密码" required="required" maxlength="15"/>
+	    <br/>  
+	       单选按钮:
+	    <input type="radio" name="sex" value="m" checked/>男
+	    <input type="radio" name="sex" value="f" />女
+	    <br/>
+	       复选按钮:
+	    <input type="checkbox" name="love" value="足球" checked />足球
+	    <input type="checkbox" name="love" value="篮球" checked />篮球
+	    <input type="checkbox" name="love" value="排球" checked />排球
+	    <input type="checkbox" name="love" value="羽毛球" checked />羽毛球
+	    <br />
+	        电话号码:
+	    <input type="tel" name="tel" value="" placeholder="请输入电话" pattern=""/>
+	    <br />
+	        邮件：
+	    <input type="email" name="email" value="" placeholder="请输入邮件" pattern="" />
+	    <br />
+	        数字：
+	    <input type="number" name="number" value="" placeholder="请输入数字" max="99" min="0" pattern="" />
+	    <br />
+	        颜色：
+	    <input type="color" name="color" value="" />
+	    <br />
+	        搜索框：
+	    <input type="search" name="search" value="" />
+	    <br />
+	        时间日期：
+	    <input type="date" name="date1" />
+	    <input type="datetime-local" name="date2" />
+	    <input type="time" name="date3" />
+	    <br />
+	        上传：
+	    <input type="file" name="file" />
+	    <br />
+	       隐藏域：
+	    <input type="hidden" name="hidden" value="隐藏的内容" />
+	    <br />
+	       下拉菜单：
+	    <select name="prov" multiple="multiple" size="4">
+	    	<option value="陕西">陕西</option>
+	    	<option value="湖北">湖北</option>
+	    	<option value="汉南">汉南</option>
+	    	<option value="黑龙江">黑龙江</option>
+	    	<option value="福建">福建</option>
+	    	<option value="广西">广西</option>
+	    </select>
+	    <br />
+	        文本域：
+	    <textarea name="desc" rows="30" cols="50"></textarea>
+	    <br />
+	    <input type="submit" value="提交按钮" />
+	    <input type="reset" value="重置按钮" />
+	    <input type="image" src="../img/1.jpg" />
+	    <br />
+	    <button>按钮</button>
+		</form>
+	</body>
+</html>
+<!--
+	作者：DreamYee
+	时间：2019-06-02
+	描述：
+	1.action:收件人地址
+	2.method 方式:post加密（数据量多）速度慢，  get(默认):不加密（数据量小），速度快
+	3.enctype:application/x-www-form-urlencoded文本（默认）
+	          multipart/form-data上传
+	4.文本框：value:初始值      placeholder:水印  required:必填项   readonly只读
+	5.按钮：name必须一致则为一组按钮
+-->
