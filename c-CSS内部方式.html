@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>CSS内部方式</title>
+		<!--
+        	作者：1584802414@qq.com
+        	时间：2019-06-08
+        	描述：内部方式
+        -->
+		<style>
+			/*
+			 key:value;
+			 #id:对id为？进行样式设置
+			 element:对那种标签进行样式设置
+			 .class:对一组的标签进行样式设置
+			 */
+			#l1{
+				color: blue;
+				font-size: small;
+				}
+			.c1,#l1{
+				color: red;
+				font-size: 30px;
+				
+			}
+			label{
+				color:deeppink;
+				font-size: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<label id="l1">你好，中国!</label><br />
+		<label>你好，陕西</label><br />
+		<label class="c1">你好，湖北</label><br />
+		<label class="c1">你好，山东</label><br />
+		<label class="c1">你好，广东</label><br />
+		<label>你好，福建</label><br />
+	</body>
+</html>
