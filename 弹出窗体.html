@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>弹出窗体</title>
+		<script>
+			function fun_1(){
+				alert("我是弹出窗体");
+			}
+			
+			function fun_2(){
+				var b=confirm("你准备点那个键");
+				alert(b);
+			}
+			function fun_3(){
+				document.write("我写入了一段内容");
+			}
+		</script>
+	</head>
+	<body>
+		<button onclick="fun_1()">Alert</button>
+		<button onclick="fun_2()">Confirm</button>
+		<button onclick="fun_3()">Write</button>
+	</body>
+</html>
