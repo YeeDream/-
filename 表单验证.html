@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>表单验证1</title>
+		<style>
+		   table{
+		   	margin: auto;
+		   	border: 1px gray solid;
+		   }
+		   
+		</style>
+		<script>
+			
+			function fun_1(){
+				var obj=document.getElementById("name");
+				if(obj.value==""){
+					var obj=document.getElementById("nameError").innerHTML="账号不允许为空";
+				    document.getElementById("nameError").style.color="red";
+				}else{
+				    document.getElementById("nameError").innerHTML="账号可以使用";
+				    document.getElementById("nameError").style.color="forestgreen";
+			    }
+			}
+		</script>
+	</head>
+	<body>
+		<table align="center" width="60%">
+			<tr>
+				<td>账号</td>
+				<td><input type="text" id="name" onblur="fun_1()"></td>
+				<td><span id="nameError"></span></td>
+			</tr>
+			<tr>
+				<td>密码</td>
+				<td><input type="password" id="pass"></td>
+				<td></td>
+			</tr>
+		</table>
+	</body>
+</html>
