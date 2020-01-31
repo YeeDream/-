@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>标记对象</title>
+	</head>
+	<script>
+		function getAllSpan(){
+			//获取到所有的span标记，得到的是一个集合(数组)
+			var spanList=document.getElementsByTagName("span");
+			for(var i=0;i<spanList.length;i++){
+				spanList[i].innerHTML="span";
+			}
+		}
+		
+		function getElementId(){
+			//获取到一个对象，编号为l1的对象
+			var e=document.getElementById("l1");
+				e.innerHTML="l1";
+		}
+		
+		function getClassName(){
+			//获取到所有class为c1的对象，得到的是一个集合(数组)
+			var c1List=document.getElementsByClassName("c1");
+			for(var i=0;i<c1List.length;i++){
+				c1List[i].innerHTML="c1";
+			}
+		}
+	</script>
+	<body>
+		<span class="c1">aaaa</span><br />
+		<span id="s2">bbbb</span><br />
+		<label id="l1" class="c1">cccc</label><br />
+		<span class="c1">dddd</span><br />
+		<label>eeee</label><br />
+		<button onclick="getAllSpan()">span</button>
+		<button onclick="getElementId()">l1</button>
+		<button onclick="getClassName()">c1</button>
+	</body>
+</html>
