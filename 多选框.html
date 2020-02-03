@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>多选框</title>
+		<script>
+			//实现全选效果
+			function fun_1(){
+				var checkBoxList=document.getElementByClassName("c1");
+				for(var i=0;i<checkBoxList.length;i++){
+					checkBoxList[i].checked="true";
+				}
+			}
+			
+			//实现全不选效果
+			function fun_2(){
+				var checkBoxList=document.getElementByClassName("c1");
+				for(var i=0;i<checkBoxList.length;i++){
+					checkBoxList[i].checked="false";
+				}
+			}
+			
+			//实现反选效果
+			function fun_3(){
+				var checkBoxList=document.getElementByClassName("c1");
+				for(var i=0;i<checkBoxList.length;i++){
+				   if(checkBoxList[i].checked){
+				   	checkBoxList[i].checked=false;
+				   }else{
+				   	checkBoxList[i].checked=true;
+				   }
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<button onclicked="fun_1()">全选</button>
+		<button onclicked="fun_2()">全不选</button>
+		<button onclicked="fun_3()">反选</button>
+		<hr />
+		
+	</body>
+</html>
