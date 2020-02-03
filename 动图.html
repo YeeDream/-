@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>桌面屏保</title>
+		<style>
+			#d1{
+				position: absolute;
+				top: 0px;
+				left: 0px;
+			}
+		</style>
+		<script>
+			var imgTop=0;
+			var imgLeft=0;
+			var isTop=true;//true:向下；false：向上
+			function moveImg(){
+				var obj=document.getElementById("d1");
+				var bodyHeight=750;
+				
+				if(imgTop==0){
+					isTop=true;
+				}else{
+					isTop=false;
+				}
+				
+				if(imgTop==bodyHeight){
+					isTop=false;
+				}else{
+					isTop=true;
+				}
+				
+				if(isTop){
+					imgTop++;
+				}else{
+					imgTop--;
+				}
+				
+				
+				
+				
+				obj.style.top=imgTop+"px";
+				//定时器效果
+				setTimeout("moveImg()",10);
+			}
+			
+			function inserDiv(){
+				//将定时器停下来
+				clearTimeout(timer);
+			}
+		</script>
+	</head>
+	<body>
+		<div id="d1">
+			<img src="../../img/2.gif" border="1"/>
+		</div>
+	</body>
+</html>
