@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>定时器</title>
+		<script>
+			var timer1,timer2;
+			var i=1;
+			var j=1;
+			function a1(){
+				document.getElementById("s1").innerHTML=i;
+				i++;
+				timer1=setTimeout("a1()",1000);//多长时间去执行,通过递归去执行的
+			}
+			function a2(){
+				clearTimeout(timer1);//停止定时器
+			}
+			
+			function b1(){
+				timer2=setInterval("b2()",1000);//每隔多长时间去执行
+			}
+			
+			function b2(){
+				document.getElementById("s2").innerHTML=j;
+				j++;
+			}
+			function b3(){
+				clearInterval(timer2);
+			}
+		</script>
+	</head>
+	<body>
+		<span id="s1">1</span><br />
+		<span id="s2">1</span>
+		<hr />
+		<button onclick="a1()">setTimeout</button>
+		<button onclick="a2()">clearTimeout</button>
+		<hr />
+		<button onclick="b1()">setTimeout</button>
+	</body>
+</html>
