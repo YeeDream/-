@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>轮播焦点图</title>
+		<script>
+			var i=1;
+			var obj;
+			var aList;
+			function startImg(){
+				obj=document.getElementById("img1");
+				aList=document.getElementByIdTagName("a");
+				setInterval("changeImg()",1000);
+			}
+			
+			function changeImg(){
+				obj.src="../img/1"+i+".jpg";
+				for(var j=0;j<aList.length;j++){
+					aList[j].style.color="blue";
+				}
+				aList[i-1].style.color="red";
+				if(i<5){
+					i++;
+				}else{
+					i=1;
+				}
+			}
+		</script>
+	</head>
+	<body onclick="startImg()">
+		<table border="1" width="740" align="center">
+		<tr height="90%">
+			<td align="center" width="100%">
+			<img align="img1" src="../img/1.jpg" width="740" height="450" />
+			</td>
+		</tr>
+		<tr align="center">
+			<td>
+				<a href="#">1</a>&nbsp;&nbsp;
+			    <a href="#">2</a>&nbsp;&nbsp;
+			    <a href="#">3</a>&nbsp;&nbsp;
+			    <a href="#">4</a>&nbsp;&nbsp;
+			    <a href="#">5</a>&nbsp;&nbsp;
+			</td>
+		</tr>
+		</table>
+	</body>
+</html>
