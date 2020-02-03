@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>函数形参和返回值</title>
+		<script>
+			function fun1(a,b){
+				alert(a+b);
+			}
+			function fun2(a) {
+				alert(a);
+			}
+			function fun3(){
+				return 5;
+			}
+			function fun4(){
+				var i=fun3();
+				alert(i);
+			}
+		</script>
+	</head>
+	<body>
+		<button onclick="fun1(3,4)">fun1</button>
+		<button onclick="fun2('abcd')">fun2</button>
+		<button onclick="fun4()">fun4</button>
+	</body>
+</html>
