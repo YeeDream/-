@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>字符串的常用方法</title>
+		<script>
+			function fun_1(){
+				var val=document.getElementById("wd").value;
+				document.getElementById("s1").innerHTML=val.length;
+				document.getElementById("s2").innerHTML=val.indexOf("s");
+				document.getElementById("s3").innerHTML=val.slice(3,6);
+				document.getElementById("s4").innerHTML=val.substr(3,6);
+				document.getElementById("s5").innerHTML=val.replace("a","A");//只替换首个匹配
+				document.getElementById("s6").innerHTML=val.concat("nihao");
+				document.getElementById("s7").innerHTML=val.trim();
+				document.getElementById("s8").innerHTML=val.split("%");
+				document.getElementById("s9").innerHTML=val.toUpperCase();
+				document.getElementById("s10").innerHTML=val.toLowerCase();
+			}
+		</script>
+	</head>
+	<body>
+		<input type="test" id="wd" />
+		<button onclick="fun_1()">String方法</button>
+		<hr />
+		字符串长度:<span id="s1"></span><br />
+		<span id="s2"></span><br />
+		<span id="s3"></span><br />
+		<span id="s4"></span><br />
+		<span id="s5"></span><br />
+		<span id="s6"></span><br />
+		<span id="s7"></span><br />
+		<span id="s8"></span><br />
+		<span id="s9"></span><br />
+		<span id="s10"></span><br />
+		
+	</body>
+</html>
