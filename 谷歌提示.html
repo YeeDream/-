@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>google提示</title>
+		<style>
+			table{
+				margin: left;
+				border: 1px gray solid;
+				width: 220px;
+				height: 200px;
+			}
+		</style>
+		<script>
+			function google(){
+				var wd=document.getElementById("wd").value;
+				removeTbodyChild();
+				for(var i=1;i<10;i++){
+					//创建节点
+					var mtr=document.createElement("tr");//创建一个tr节点
+					var mtd=document.createElement("td");//创建一个td节点
+					var textN=document.createTextNode(wd+i);//创建一个文本节点，文本节点内容是：wd+i
+					
+					
+					mtr.onmousemove=function(){
+						//this代表当前选中的对象
+						this.style.backgroundColor="gray";
+					}
+					mtr.onmouseout=function(){
+						//this代表当前选中的对象
+						this.style.backgroundColor="";
+					}
+					mtr.onclick=function(){
+						//this代表当前选中的对象
+						this.innerHTML;
+						removeTbodyChild();
+					}
+					//设置创建好的节点之间的关系
+					mtd.appendChild(textN);
+					mtr.appendChild(mtd);
+					document.getElementById("tbody").appendChild(mtr);
+				}
+			}
+			
+			function removeTbodyChild(){
+				var tbody=document.getElementById("tbody");
+				var myNodes=tbody.childNodes;
+				var len=myNodes.length;
+				for(var i=0;i<len;i++){
+					tbody.removeChild(myNodes[0]);
+				}
+			}
+			
+			
+		</script>
+	</head>
+	<body>
+		<input type="text" id="wd" style="width: 220px;"  onkeydown="google()"/>
+		<table>
+			<tbody id="tbody">
+				
+			</tbody>
+		</table>
+	</body>
+</html>
