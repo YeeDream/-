@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>左移右移</title>
+		<script>
+			function toRight(){
+				//获取到所有被选中的内容
+				var optionArray=document.getElementById("s1").selectedOptions;
+				var len=optionArray.length;
+				for(var i=0;i<len;i++){
+					var childElement=optionArray[0];
+					//将这个元素添加到s2中
+					document.getElementById("s2").appendChild(childElement);
+				}
+			    
+			}
+			
+			function toLeft(){
+				
+			}
+			
+		</script>
+	</head>
+	<body>
+		<div align="center">
+			<select multiple="multiple" id="s1" style="width: 80px; height: 200px;" size="10">
+				<option>陕西</option>
+			    <option>湖北</option>
+			    <option>广州</option>
+			    <option>湖南</option>
+		     	<option>江苏</option>
+			    <option>香港</option>
+			    <option>山西</option>
+			</select>
+			<select multiple="multiple" id="s2",style="width: 80px;  height: 200px;" size="10">
+				
+			</select>
+			<br />
+			<button onclick="toLeft()">&lt;&lt;</button>
+			<button onclick="toRight()">&gt;&gt;</button>
+		</div>
+	</body>
+</html>
