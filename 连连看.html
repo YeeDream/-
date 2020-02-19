@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>连连看</title>
+		<script>
+			var imgList;
+			var srcList=new Array();
+			var s1,s2;
+			var count=1;
+			var lastIndex;
+			function fun_1(){
+				imgList=document.getElementsByTagName("img");
+				for(var i=0;i<10000;i++){
+					var a=Math.floor(Math.random()*16);
+					var b=Math.floor(Math.random()*16);
+					if(a!=b){
+						var a1=imgList[a];
+						var b1=imgList[b];
+						var c=a1.src;
+						a1.src=b1.src;
+						b1.src=c;
+					}
+				}
+				for(var i=0;i<imgList.length;i++){
+					srcList[i]=imgList.src;
+					imgList[i].src="../img/1.jpg";
+				}
+				
+			}
+			function fun_2(index1){
+				var src1=srcList[index1];
+				if(count==1){
+					lastIndex=index1;
+					s1=src1;
+					count=2;
+				}else{
+					s2=src1;
+					count=1;
+				}
+				imgList[index1].src=src1;
+				
+				if(count==1){
+					if(s1==s2){
+						
+					}else{
+						setTimeout("fun_3("+index1+")",1000);
+					}
+				}
+			}
+			function fun_3(index1){
+				//不正确，应该翻回去
+				imgList[lastIndex1].src="";
+				imgList[lastIndex].src="";
+			}
+		</script>
+	</head>
+	<body>
+		<div align="center">
+			<h1>猜猜看</h1>
+			<button onclick="fun_1()">洗牌</button>
+		</div>
+		<hr />
+		<table align="center" border="1">
+			<tr>
+				<td><></td>
+			</tr>
+		</table>
+	</body>
+</html>
