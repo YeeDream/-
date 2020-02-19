@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery的基本使用</title>
+		<!--引入jQuery的JS文件-->
+        <script type="text/javascript" src="../jquery-3.4.1.min.js"></script>
+        <script>
+        	function abc(){
+        		alert("aaa");
+        	}
+        	//等同于onload文件
+        	/*
+        	 * onload事件；需要页面全部加载完毕后才执行
+        	 * ready()函数：只要页面主体加载完毕就能执行
+        	 */
+            $(document).ready(abc());
+        	
+        	//匿名函数
+        	$(document).ready(function(){
+        		alert("bbb");
+        	})
+        </script>
+	</head>
+	<body>
+	</body>
+</html>
