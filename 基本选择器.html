@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>基本选择器</title>
+		<script type="text/javascript" src="../jquery-3.4.1.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				document.getElementById("s2").style.color="red";
+				//获取到编号为s3的对象，调用对象的css方法，将属性为color的值设置为red
+				$("#s3").css("color","red");
+				//获取到编号为s1的对象
+				var $obj1=$("#s1");
+				//获取到样式为c1的一组对象
+				var $list1=$(".c1");
+				//获取到元素类型为span的一组对象
+				var $span=$("span");
+				
+				$obj1.css("color","beige");
+				$list1.css("color","aqua");
+				$span.css("color","blanchedalmond");
+				$("*").css("color","blue");
+				$("#s1,#s3,#s5").css("color","red");
+			});
+		</script>
+	</head>
+	<body>
+		<span id="s1">aaa</span><br />
+		<span id="s2">bbb</span><br />
+		<label id="l1">ccc</label><br />
+		<span id="s3">ddd</span><br />
+		<label id="l2">eee</label><br />
+		<span id="s4">fff</span><br />
+		<span id="s5">ggg</span><br />
+		
+		aaa
+	</body>
+</html>
