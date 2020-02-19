@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>商品的CRUD操作</title>
+		<style>
+			table{
+				margin: auto;
+				border: 2px gray solid;
+			}
+		</style>
+		<script>
+			var mid=1;
+			var address=new Array("杭州","西安","广州","北京","上海");
+			var sum=0;
+			var selectRow=null;
+			function saveGoods(){
+				//创建了六个节点，分别是一个tr节点和五个td节点
+				var mtr=document.createElement("tr");
+				var mtd1=document.createElement("td");
+				var mtd2=document.createElement("td");
+				var mtd3=document.createElement("td");
+				var mtd4=document.createElement("td");
+				var mtd5=document.createElement("td");
+				//给td节点赋值操作				
+				mtd1.innerHTML=mid;
+				mtd2.innerHTML="<input type='text' style='width: 110px;' class='name' />"
+				mtd3.innerHTML="<input type='number' style='width: 80px;' class='price' />"
+				mtd4.innerHTML="-<input type='text' style='width: 30px;' class='number' />+"
+				var addressStr="<select class='address'>";
+				for(var i=0;i<address.length;i++){
+					addressStr+="<option>"+address[i]+"<option>";
+				}
+				addressStr="</select>";
+				mtd5.innerHTML=addressStr;
+				
+				//给行上添加一个单击事件
+				mtr.ondblclick=function(){
+					if(b){
+						this.style.backgroundColor="gray";
+						selectRow=this;
+					}
+				}
+				//将td节点加入到tr中
+				mtr.appendChild(mtd1);
+				mtr.appendChild(mtd2);
+				mtr.appendChild(mtd3);
+				mtr.appendChild(mtd4);
+				mtr.appendChild(mtd5);
+				//将td节点加入到了tbody中
+				document.getElementById("tbody").appendChild(mtr);
+				//让序号递增
+				mid++;
+			}
+			
+			function checkForm(){
+				var name1=document.getElementsByClassName("name")[0].value;
+				var price1=document.getElementsByClassName("price")[0].value;
+				var number1=document.getElementsByClassName("number")[0].value;
+				var address1=document.getElementsByClassName("address")[0].value;
+				//获取到当前行
+				var nowRow=document.getElementById("tbody").childNodes[mid-2];
+				nowRow.childNodes[1].innerHTML=name1;
+				nowRow.childNodes[2].innerHTML=price1;
+				nowRow.childNodes[3].innerHTML=number1;
+				nowRow.childNodes[4].innerHTML=address1;
+				sum+=price1*number1;
+				document.getElementById("allMoney").innerHTML="¥"+sum+"元";
+				document.getElementById("allCount").innerHTML=mid-1+"个";
+				b=true;
+			}
+			
+			function updateGoods(){
+				var childs=selectRow.childNodes;
+				var id2=childs[0].innerHTML;
+				var name2=childs[1].innerHTML;
+				var price2=childs[2].innerHTML;
+				var number2=childs[3].innerHTML;
+				var address2=childs[4].innerHTML;
+				
+				childs[1].innerHTML=""
+			}
+			
+			function removeGoods(){
+				
+			}
+		</script>
+	</head>
+	<body>
+		
+		<table>
+			<caption>
+				<button onclick="saveGoods()">添加</button>
+				<button>修改</button>
+				<button>删除</button>
+				<button>确认</button>
+			</caption>
+			<caption>
+				<thead>
+				<tr>
+					<td>序号</td>
+					<td>名称</td>
+					<td>价格</td>
+					<td>数量</td>
+					<td>产地</td>
+				</tr>
+			</thead>
+			
+			</caption>
+			<tbody>
+				
+			</tbody>
+			<tr>
+				<td colspan="5" align="right">总价钱；总个数</td>
+				<td></td>
+			</tr>
+		</table>
+	</body>
+</html>
