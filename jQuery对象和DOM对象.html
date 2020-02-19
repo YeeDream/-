@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery对象和DOM对象</title>
+		<script type="text/javascript" src="../jquery-3.4.1.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				//获取到DOM对象，获取到的是编号为l1的对象
+				var obj=document.getElementById("l2");
+				//获取到jQuery对象
+				var $obj=$("#l1");
+				/*
+				 * DOM对象和jQuery之间不能相互使用他人的内容
+				 * jQuery对象就是通过jQuery包装DOM对象之后产生的对象
+				 */
+				//将jQuery对象------>DOM对象
+				var obj21=$obj.get(0);
+				var obj22=$obj[0];
+				//将DOM对象------->jQuery对象
+				var $obj2=$(obj);
+				//使用DOM对象的方法将前景色修改
+				obj22.style.color="red";
+				//使用jQuery对象的方法将前景色修改
+				$obj2.css("color","blue");
+			})
+		</script>
+	</head>
+	<body>
+		<label id="l1">aaaa</label><br />
+		<label id="l2">bbbb</label><br />
+	</body>
+</html>
